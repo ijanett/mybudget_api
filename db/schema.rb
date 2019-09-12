@@ -10,23 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_043302) do
+ActiveRecord::Schema.define(version: 2019_09_12_033330) do
 
   create_table "budgets", force: :cascade do |t|
     t.integer "amount"
     t.integer "category"
+    t.string "description"
     t.integer "user_id"
     t.integer "subcategory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
     t.index ["subcategory_id"], name: "index_budgets_on_subcategory_id"
     t.index ["user_id"], name: "index_budgets_on_user_id"
   end
 
   create_table "subcategories", force: :cascade do |t|
     t.string "name"
-    t.integer "total", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
