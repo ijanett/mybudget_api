@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_033330) do
+ActiveRecord::Schema.define(version: 2019_09_12_042015) do
 
   create_table "budgets", force: :cascade do |t|
     t.integer "amount"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_033330) do
     t.integer "subcategory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
     t.index ["subcategory_id"], name: "index_budgets_on_subcategory_id"
     t.index ["user_id"], name: "index_budgets_on_user_id"
   end
