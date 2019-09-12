@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_042015) do
+ActiveRecord::Schema.define(version: 2019_09_12_043302) do
 
   create_table "budgets", force: :cascade do |t|
     t.integer "amount"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_042015) do
 
   create_table "subcategories", force: :cascade do |t|
     t.string "name"
-    t.integer "total"
+    t.integer "total", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
