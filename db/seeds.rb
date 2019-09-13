@@ -9,7 +9,7 @@
 users = User.create([{username: 'ijm16'}, {username: 'chels8'}])
 
 subcategories = Subcategory.create([
-    {name: 'Housing Expenses'},
+    {name: 'Housing'},
     {name: 'Transportation & Travel'},
     {name: 'Education & Training'},
     {name: 'Personal'},
