@@ -11,4 +11,9 @@ class UsersController < ApplicationController
         }
         render json: UserSerializer.new(user, options)
     end
+
+    def create
+        user = User.find_or_create_by(username: params[:username])
+        render json: UserSerializer.new(user)
+    end
 end
