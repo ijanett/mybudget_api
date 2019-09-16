@@ -1,10 +1,10 @@
 class BudgetsController < ApplicationController
 
-    # def index
-    #     budgets = Budget.all
-    #     render json: BudgetSerializer.new(budgets)
-    # end
-
+    def index
+        budgets = Budget.all
+        render json: BudgetSerializer.new(budgets)
+    end
+    
     def create
         budget = Budget.create(budget_params)
         render json: BudgetSerializer.new(budget)
