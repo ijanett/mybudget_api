@@ -12,12 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2019_09_12_033330) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "budgets", force: :cascade do |t|
     t.float "amount"
     t.integer "category"
     t.string "description"
-    t.integer "user_id"
-    t.integer "subcategory_id"
+    t.bigint "user_id"
+    t.bigint "subcategory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subcategory_id"], name: "index_budgets_on_subcategory_id"
@@ -36,4 +39,6 @@ ActiveRecord::Schema.define(version: 2019_09_12_033330) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "budgets", "subcategories"
+  add_foreign_key "budgets", "users"
 end
